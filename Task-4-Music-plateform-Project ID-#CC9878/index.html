@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spotify- Web Player: Music For everyone</title>
+    <link rel="icon" type="image/x-icon" href="/assets/logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+    <div class="main">
+        <div class="sidebar">
+            <div class="nav">
+                <div class="nav-option" style="opacity: 1;">
+                    <i class="fa-solid fa-house"></i>
+                    <a href="#">Home</a>
+                </div>
+                <!-- <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="" class="search">Search</a>
+                </div> -->
+
+
+                <div class="nav-option">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="#" class="search">Search</a>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for songs..." id="search-input" />
+                        <div class="search-results" id="search-results"></div>
+                         <a href="app.js" class="cardk">
+                             <img src="assets/song2.png" alt="" style="height: 50px; width: 50%;" >
+                             <div class="cont">
+                                 <h3>Hanumanji</h3>
+                                 <p>song, 2021</p>
+                             </div>
+                            </a> 
+                    </div>
+                </div>
+                
+                
+            </div>
+            
+            <div class="library">
+                <div class="option">
+                   <div class="liby-option nav-option">
+                    <img src="/assets/library_icon.png" alt="">
+                    <a href="#" style="margin-left: 10px;">Your Library</a>
+                   </div>
+                   <div class="icon">
+                    <i class="fa-solid fa-plus"></i>
+                    <i class="fa-solid fa-arrow-right"></i>
+                   </div>
+                </div>
+                <div class="liby-box">
+                    <div class="box">
+                        <p class="box1">Create your first playlist</p>
+                        <p class="box2">Its easy, we'll help you</p>
+                        <button class="badge">Create playlist</button>
+                    </div>
+                    <div class="box">
+                        <p class="box1">Let's find some podcast to follow</p>
+                        <p class="box2">We'll keep you updated on now episodes</p>
+                        <button class="badge">Browse podcasts</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="main-nav">
+                <div class="main-nav-icon">
+                    <img src="./assets/backward_icon.png" alt="">
+                     <img src="./assets/forward_icon.png" alt="" class="hide">
+                </div>
+                <div class="main-nav-option">
+                <button class="badge nav-item hide">Explore Premium</button>
+                <button class="badge nav-item dark-badge"><i class="fa-regular fa-circle-down" style="margin-right: 5px;"></i>Install App</button>
+                <i class="fa-regular fa-user nav-item"></i>
+                </div>
+            </div>
+            
+                <div class="show">
+                    <h2>Recently Played</h2>
+                     <h3 class="show1">Show all</h3>
+                </div>
+               
+                <div class="cards-container" id="playlist">
+                    <div class="card" data-src="../assets/song12.mp3">
+                    <img src="./assets/Hanumanji.png" alt="" class="card-img">
+                    <p class="card-title">Bajrang Baan-Lofi</p>
+                    <p class="card-info">Rasraj Ji Maharaj</p>
+                </div>
+
+                <div class="card" data-src="./assets/song11.mp3" id="songCard">
+                    <img src="./assets/song3.png" alt="" class="card-img">
+                    <p class="card-title">Jo Tum Mere Ho</p>
+                    <p class="card-info">Anuv Jain</p>
+                    
+                    <!-- <button type="button" id="playPauseBtn" class="btn btn-success">Play</button> -->
+                </div>
+
+                <!-- <audio id="song" src="./assets/Jo Tum Mere Ho.mp3"></audio> -->
+                
+
+                <div class="card" data-src="./assets/song13.mp3" >
+                    <img src="./assets/song5.png" alt="" class="card-img">
+                    <p class="card-title">Aashiqui 2</p>
+                    <p class="card-info">Mithoon, Ankit Tiwari, Jeet Gannguli</p>
+                </div>
+
+                <div class="card" data-src="./assets/song14.mp3">
+                    <img src="./assets/song21.png" alt="" class="card-img">
+                    <p class="card-title">O Bedardeya (From "Tu Jhoothi Main Makkaar")</p>
+                    <p class="card-info">O Bedardeya (From "Tu Jhoothi Main Makkaar")</p>
+                </div>
+
+                <div class="card" data-src="./assets/song15.mp3">
+                    <img src="./assets/song2.png" alt="" class="card-img">
+                    <p class="card-title">Aaj Ki Raat (From "Stree 2")</p>
+                    <p class="card-info">Aaj Ki Raat (From "Stree 2")</p>
+                </div>
+            </div>
+
+
+            <div class="show">
+                <h2>Trending now near you</h2>
+                 <h3 class="show1">Show all</h3>
+            </div>
+                <div class="cards-container"> 
+                    <div class="card">
+                    <img src="./assets/card2img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/song8.png" alt="" class="card-img">
+                    <p class="card-title">Jeene De Na</p>
+                    <p class="card-info">Harish Sagane. Jeene De Na 2018</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card4img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card3img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card4img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+                <div class="card">
+                    <img src="./assets/card2img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+            </div>
+
+           
+
+            <div class="show">
+                <h2>Featured Charts</h2>
+                 <h3 class="show1">Show all</h3>
+            </div>
+                <div class="cards-container">
+                    <div class="card">
+                    <img src="./assets/card5img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+
+             
+                    <div class="card">
+                    <img src="./assets/card6img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+
+         
+                    <div class="card">
+                    <img src="./assets/card1img.jpeg" alt="" class="card-img">
+                    <p class="card-title">Top 50 - Global</p>
+                    <p class="card-info">Your daily updates of the most played tracks..</p>
+                </div>
+            </div>
+          
+            <div class="foter"></div>
+            <div class="line"></div>
+           
+          </div>
+        <div class="music-player">
+            <div class="album">
+                <div class="img-player">
+                    <img src="/assets/song21.png" alt="">
+                </div>
+                <div class="text-song">
+                    <p class="text">Oh Bedardya</p>
+                    <p class="text1">Ranbir Kapoor</p>
+                </div>
+                <div class="heart-icon">
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-laptop heart"></i>
+                </div>
+            </div>
+            <div class="playback">
+                <div class="play-icon">
+                    <img src="./assets/player_icon1.png" alt="" class="play-icon-img">
+                    <img src="./assets/player_icon2.png" alt="" class="play-icon-img">
+                    <!-- <img src="./assets/player_icon3.png" alt="" class="play-icon-img" style="opacity: 1; height: 2rem;" > -->
+                    <img src="./assets/player_icon3.png" alt="Play" class="play-icon-img" id="playPauseBtn" style="opacity: 1; height: 2rem;">
+                    <img src="./assets/player_icon4.png" alt="" class="play-icon-img">
+                    <img src="./assets/player_icon5.png" alt="" class="play-icon-img">
+                </div>
+                <!-- <div class="player status">
+                    <span class="currt">00:00 </span>
+                    <input type="range" min="0" max="100" class="progress" step="1" id="progress-bar" >
+                    <span class="timeout"> 3:33</span>
+                </div> -->
+                <div class="player status">
+                    <span class="currt" style="margin-right: 1rem;">00:00</span>
+                    <div class="progress-container" id="progress-container">
+                        <div class="progress-bar" id="progress-bar"></div>
+                    </div>
+                    <span class="timeout" style="margin-left: 16px;">03:33</span>
+                </div>
+                
+                
+            </div>
+            <div class="control">
+                <div class="control-icon">
+                    <i class="fa-solid fa-headphones-simple control-icon-option"></i>
+                    <i class="fa-solid fa-podcast control-icon-option"></i>
+                    <i class="fa-solid fa-desktop control-icon-option"></i>
+                </div>
+                <div class="control-icon1">
+                    <i class="fa-solid fa-volume-high control-icon-option1"></i>
+                    <div><input type="range" min="0" max="100" class="volume" step="1"></div>
+                    <i class="fa-solid fa-up-right-and-down-left-from-center control-icon-option1"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+</body>
+</html>

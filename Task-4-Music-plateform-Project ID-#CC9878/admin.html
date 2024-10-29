@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <h2>Admin Panel: Add a New Song</h2>
+    <form id="add-song-form">
+        <div>
+            <label for="song-title">Song Title:</label>
+            <input type="text" id="song-title" required>
+        </div>
+        <div>
+            <label for="song-artist">Artist:</label>
+            <input type="text" id="song-artist" required>
+        </div>
+        <div>
+            <label for="song-file">Upload Song URL:</label>
+            <input type="text" id="song-file" required>
+        </div>
+        <button type="submit">Add Song</button>
+    </form>
+
+    <script>
+        const addSongForm = document.getElementById("add-song-form");
+
+        // Function to load songs from localStorage
+        function loadSongs() {
+            return JSON.parse(localStorage.getItem("songs")) || [];
+        }
+
+        // Function to save songs to localStorage
+        function saveSongs(songs) {
+            localStorage.setItem("songs", JSON.stringify(songs));
+        }
+
+        // Handle form submission to add a new song
+        addSongForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form values
+            const title = document.getElementById("song-title").value;
+            const artist = document.getElementById("song-artist").value;
+            const fileUrl = document.getElementById("song-file").value;
+
+            // Create a new song object
+            const newSong = { title, artist, fileUrl };
+
+            // Load existing songs
+            const songs = loadSongs();
+
+            // Add the new song to the songs array
+            songs.push(newSong);
+
+            // Save the updated songs list to localStorage
+            saveSongs(songs);
+
+            // Reset the form
+            addSongForm.reset();
+        });
+    </script>
+</body>
+</html>
